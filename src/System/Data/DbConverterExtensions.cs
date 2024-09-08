@@ -2,39 +2,6 @@
 
 namespace System.Data
 {
-    /// <summary>
-    /// Represents a database converter responsible for managing and applying updates to the database schema.
-    /// </summary>
-    /// <typeparam name="TDbConnection">The type of the database connection.</typeparam>
-    public interface IDbConverter<in TDbConnection> where TDbConnection : IDbConnection
-    {
-        /// <summary>
-        /// Gets the version of the database schema that this converter is designed to update to.
-        /// </summary>
-        Version Version { get; }
-
-        /// <summary>
-        /// Retrieves the current version of the database schema from the specified connection.
-        /// </summary>
-        /// <param name="connection">The database connection to use for retrieving the version.</param>
-        /// <returns>The current version of the database schema.</returns>
-        Version GetDbVersion(TDbConnection connection);
-
-        /// <summary>
-        /// Determines whether the database requires an update to match the version specified by this converter.
-        /// </summary>
-        /// <param name="connection">The database connection to check.</param>
-        /// <returns><c>true</c> if the database requires an update; otherwise, <c>false</c>.</returns>
-        bool RequiresUpdate(TDbConnection connection);
-
-        /// <summary>
-        /// Applies the necessary updates to the database to bring it in line with the version specified by this converter.
-        /// </summary>
-        /// <param name="connection">The database connection to update.</param>
-        /// <returns><c>true</c> if the update was successful; otherwise, <c>false</c>.</returns>
-        bool Update(TDbConnection connection);
-    }
-
     public static class DbConverterExtensions
     {
         private static void CheckDbVersion<TDbConnection>(TDbConnection connection, Func<TDbConnection, Version> getDbVersion, Version dbVersion) where TDbConnection : IDbConnection
@@ -55,7 +22,7 @@ namespace System.Data
             }
         }
 
-        public static void Initialize<TDbConnection>(this IDbConverter<TDbConnection>[] converters, IDbContext context) where TDbConnection : IDbConnection
+        public static void Initialize<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, IDbContext context) where TDbConnection : IDbConnection
         {
 #if NET6_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(converters);
@@ -67,7 +34,7 @@ namespace System.Data
             converters.Initialize((TDbConnection)context.Connection);
         }
 
-        public static void Initialize<TDbConnection>(this IDbConverter<TDbConnection>[] converters, TDbConnection connection) where TDbConnection : IDbConnection
+        public static void Initialize<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection) where TDbConnection : IDbConnection
         {
 #if NET6_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(converters);
@@ -76,7 +43,7 @@ namespace System.Data
             Throw.IfNull(converters);
             Throw.IfNull(connection);
 #endif
-            Debug.Assert(converters.Length > 0);
+            Debug.Assert(converters.Count > 0);
             Debug.Assert(converters.IsOrderedByAscending());
             Debug.Assert(connection is { State: ConnectionState.Open }, $"{nameof(connection)} is not opened.");
 
@@ -86,7 +53,7 @@ namespace System.Data
             {
 
 #if NETFRAMEWORK || NETSTANDARD2_0
-                var dbVersion = converters[converters.Length - 1].Version;
+                var dbVersion = converters[converters.Count - 1].Version;
 #else
                 var dbVersion = converters[^1].Version;
 #endif
@@ -104,12 +71,12 @@ namespace System.Data
             }
         }
 
-        private static bool IsOrderedByAscending<TDbConnection>(this IDbConverter<TDbConnection>[] converters)
+        private static bool IsOrderedByAscending<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters)
             where TDbConnection : IDbConnection
         {
-            for (int i = 1; i < converters.Length; i++)
+            for (int i = 1; i < converters.Count; i++)
             {
-                if (converters[i - 1].Version > converters[i].Version)
+                if (converters[i - 1].Version >= converters[i].Version)
                 {
                     return false;
                 }
@@ -117,7 +84,7 @@ namespace System.Data
             return true;
         }
 
-        private static bool RequiresUpdate<TDbConnection>(this IDbConverter<TDbConnection>[] converters, TDbConnection connection) where TDbConnection : IDbConnection
+        private static bool RequiresUpdate<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection) where TDbConnection : IDbConnection
         {
 #if NET6_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(converters);
@@ -129,7 +96,7 @@ namespace System.Data
             Debug.Assert(connection is { State: ConnectionState.Open }, $"{nameof(connection)} is not opened.");
             if (
 #if NETFRAMEWORK || NETSTANDARD2_0
-                converters[converters.Length - 1]
+                converters[converters.Count - 1]
 #else
                 converters[^1]
 #endif
@@ -140,7 +107,7 @@ namespace System.Data
             return false;
         }
 
-        private static bool Update<TDbConnection>(this IDbConverter<TDbConnection>[] converters, TDbConnection connection, Version dbVersion, bool forceUpdate = false) where TDbConnection : IDbConnection
+        private static bool Update<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection, Version dbVersion, bool forceUpdate = false) where TDbConnection : IDbConnection
         {
             Debug.Assert(converters != null);
             Debug.Assert(connection is { State: ConnectionState.Open });
