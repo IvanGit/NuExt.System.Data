@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.1;netstandard2.0;net8.0;net6.0;net462</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageTags>nuext;extensions;database;ado.net;async</PackageTags>
     <Description>Provides various extensions for data classes.
@@ -16,7 +16,7 @@ System.Data.DataTableExtensions
 System.Data.DalBase
 System.Data.DbConverter&lt;TDbConnection&gt;
 System.Data.IDbContext</Description>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <RootNamespace />
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
@@ -26,7 +26,7 @@ System.Data.IDbContext</Description>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(UseNuExtPackages)' == 'true'">
-    <PackageReference Include="NuExt.System" Version="0.1.7" />
+    <PackageReference Include="NuExt.System" Version="0.1.8" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(UseNuExtPackages)' == 'false'">
