@@ -11,6 +11,20 @@
 - **`System.Data.DbConverter<TDbConnection>`**: Base class for database converters.
 - **`System.Data.IDbContext`**: Interface for database context operations.
 
+### Installation
+
+You can install `NuExt.System.Data` via [NuGet](https://www.nuget.org/):
+
+```sh
+dotnet add package NuExt.System.Data
+```
+
+Or through the Visual Studio package manager:
+
+1. Go to `Tools -> NuGet Package Manager -> Manage NuGet Packages for Solution...`.
+2. Search for `NuExt.System.Data`.
+3. Click "Install".
+
 ### Usage Examples
 
 For comprehensive examples of how to use the package, see samples in the following repository:
