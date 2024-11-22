@@ -16,7 +16,7 @@ System.Data.DataTableExtensions
 System.Data.DalBase
 System.Data.DbConverter&lt;TDbConnection&gt;
 System.Data.IDbContext</Description>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
     <RootNamespace />
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
@@ -26,7 +26,7 @@ System.Data.IDbContext</Description>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(UseNuExtPackages)' == 'true'">
-    <PackageReference Include="NuExt.System" Version="0.2.0" />
+    <PackageReference Include="NuExt.System" Version="0.2.1" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(UseNuExtPackages)' == 'false'">
