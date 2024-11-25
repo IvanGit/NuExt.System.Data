@@ -62,7 +62,11 @@ namespace System.Data
                     bool result = converters.Update(connection, dbVersion);
                     Debug.Assert(result);
                 }
-                CheckDbVersion(connection, converters[0].GetDbVersion, dbVersion);
+#if NETFRAMEWORK || NETSTANDARD2_0
+                CheckDbVersion(connection, converters[converters.Count - 1].GetDbVersion, dbVersion);
+#else
+                CheckDbVersion(connection, converters[^1].GetDbVersion, dbVersion);
+#endif
             }
             catch (Exception ex)
             {
