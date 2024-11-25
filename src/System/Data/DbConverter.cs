@@ -23,17 +23,19 @@
         /// Retrieves the current version of the database schema from the specified database connection.
         /// </summary>
         /// <param name="connection">The database connection to use for retrieving the version.</param>
+        /// <param name="cancellationToken">Cancellation token to cancel the execution.</param>
         /// <returns>The current version of the database schema.</returns>
-        public abstract Version GetDbVersion(TDbConnection connection);
+        public abstract Version GetDbVersion(TDbConnection connection, CancellationToken cancellationToken);
 
         /// <summary>
         /// Determines whether the database requires an update to match the version specified by this converter.
         /// </summary>
         /// <param name="connection">The database connection to check.</param>
+        /// <param name="cancellationToken">Cancellation token to cancel the execution.</param>
         /// <returns><c>true</c> if the database requires an update; otherwise, <c>false</c>.</returns>
-        public virtual bool RequiresUpdate(TDbConnection connection)
+        public virtual bool RequiresUpdate(TDbConnection connection, CancellationToken cancellationToken)
         {
-            Version dbVersion = GetDbVersion(connection);
+            Version dbVersion = GetDbVersion(connection, cancellationToken);
             return dbVersion < Version;
         }
 
@@ -41,8 +43,9 @@
         /// Applies the necessary updates to the database to bring it in line with the version specified by this converter.
         /// </summary>
         /// <param name="connection">The database connection to update.</param>
+        /// <param name="cancellationToken">Cancellation token to cancel the execution.</param>
         /// <returns><c>true</c> if the update was successful; otherwise, <c>false</c>.</returns>
-        public abstract bool Update(TDbConnection connection);
+        public abstract bool Update(TDbConnection connection, CancellationToken cancellationToken);
 
         #endregion
     }

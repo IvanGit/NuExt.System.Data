@@ -4,7 +4,7 @@ namespace System.Data
 {
     public static class DbConverterExtensions
     {
-        private static void CheckDbVersion<TDbConnection>(TDbConnection connection, Func<TDbConnection, Version> getDbVersion, Version dbVersion) where TDbConnection : IDbConnection
+        private static void CheckDbVersion<TDbConnection>(TDbConnection connection, Func<TDbConnection, CancellationToken, Version> getDbVersion, Version dbVersion, CancellationToken cancellationToken) where TDbConnection : IDbConnection
         {
 #if NET6_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(connection);
@@ -15,14 +15,14 @@ namespace System.Data
             Throw.IfNull(getDbVersion);
             Throw.IfNull(dbVersion);
 #endif
-            var version = getDbVersion(connection);
+            var version = getDbVersion(connection, cancellationToken);
             if (version > dbVersion)
             {
                 throw new DataException("File created in a later version of the program. Install the new version to open this file.");
             }
         }
 
-        public static void Initialize<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, IDbContext context) where TDbConnection : IDbConnection
+        public static void Initialize<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, IDbContext context, CancellationToken cancellationToken) where TDbConnection : IDbConnection
         {
 #if NET6_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(converters);
@@ -31,10 +31,10 @@ namespace System.Data
             Throw.IfNull(converters);
             Throw.IfNull(context);
 #endif
-            converters.Initialize((TDbConnection)context.Connection);
+            converters.Initialize((TDbConnection)context.Connection, cancellationToken);
         }
 
-        public static void Initialize<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection) where TDbConnection : IDbConnection
+        public static void Initialize<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection, CancellationToken cancellationToken) where TDbConnection : IDbConnection
         {
 #if NET6_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(converters);
@@ -57,15 +57,15 @@ namespace System.Data
 #else
                 var dbVersion = converters[^1].Version;
 #endif
-                if (converters.RequiresUpdate(connection))
+                if (converters.RequiresUpdate(connection, cancellationToken))
                 {
-                    bool result = converters.Update(connection, dbVersion);
+                    bool result = converters.Update(connection, dbVersion, cancellationToken);
                     Debug.Assert(result);
                 }
 #if NETFRAMEWORK || NETSTANDARD2_0
-                CheckDbVersion(connection, converters[converters.Count - 1].GetDbVersion, dbVersion);
+                CheckDbVersion(connection, converters[converters.Count - 1].GetDbVersion, dbVersion, cancellationToken);
 #else
-                CheckDbVersion(connection, converters[^1].GetDbVersion, dbVersion);
+                CheckDbVersion(connection, converters[^1].GetDbVersion, dbVersion, cancellationToken);
 #endif
             }
             catch (Exception ex)
@@ -88,7 +88,7 @@ namespace System.Data
             return true;
         }
 
-        private static bool RequiresUpdate<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection) where TDbConnection : IDbConnection
+        private static bool RequiresUpdate<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection, CancellationToken cancellationToken) where TDbConnection : IDbConnection
         {
 #if NET6_0_OR_GREATER
             ArgumentNullException.ThrowIfNull(converters);
@@ -104,14 +104,14 @@ namespace System.Data
 #else
                 converters[^1]
 #endif
-                .RequiresUpdate(connection))
+                .RequiresUpdate(connection, cancellationToken))
             {
                 return true;
             }
             return false;
         }
 
-        private static bool Update<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection, Version dbVersion, bool forceUpdate = false) where TDbConnection : IDbConnection
+        private static bool Update<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection, Version dbVersion, CancellationToken cancellationToken) where TDbConnection : IDbConnection
         {
             Debug.Assert(converters != null);
             Debug.Assert(connection is { State: ConnectionState.Open });
@@ -120,9 +120,9 @@ namespace System.Data
             Version? latestVersion = null;
             foreach (var converter in converters!)
             {
-                if (forceUpdate || converter.RequiresUpdate(connection))
+                if (/*forceUpdate || */converter.RequiresUpdate(connection, cancellationToken))
                 {
-                    bool updated = converter.Update(connection);
+                    bool updated = converter.Update(connection, cancellationToken);
                     Debug.Assert(updated);
                     if (!updated)
                     {
