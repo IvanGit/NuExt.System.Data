@@ -7,7 +7,7 @@ namespace System.Data
     {
         public static bool GetBoolean(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -28,7 +28,7 @@ namespace System.Data
 
         public static bool GetBoolean(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -49,7 +49,7 @@ namespace System.Data
 
         public static bool GetBoolean(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -70,7 +70,7 @@ namespace System.Data
 
         public static bool GetBoolean(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -91,7 +91,7 @@ namespace System.Data
 
         public static byte GetByte(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -102,7 +102,7 @@ namespace System.Data
 
         public static byte GetByte(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -113,7 +113,7 @@ namespace System.Data
 
         public static byte GetByte(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -124,7 +124,7 @@ namespace System.Data
 
         public static byte GetByte(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -135,7 +135,7 @@ namespace System.Data
 
         public static char GetChar(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -146,7 +146,7 @@ namespace System.Data
 
         public static char GetChar(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -157,7 +157,7 @@ namespace System.Data
 
         public static char GetChar(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -168,7 +168,7 @@ namespace System.Data
 
         public static char GetChar(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -179,7 +179,7 @@ namespace System.Data
 
         public static DateTime GetDateTime(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -194,7 +194,7 @@ namespace System.Data
 
         public static DateTime GetDateTime(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -209,7 +209,7 @@ namespace System.Data
 
         public static DateTime GetDateTime(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -224,7 +224,7 @@ namespace System.Data
 
         public static DateTime GetDateTime(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -239,7 +239,7 @@ namespace System.Data
 
         public static decimal GetDecimal(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -250,7 +250,7 @@ namespace System.Data
 
         public static decimal GetDecimal(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -261,7 +261,7 @@ namespace System.Data
 
         public static decimal GetDecimal(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -272,7 +272,7 @@ namespace System.Data
 
         public static decimal GetDecimal(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -283,7 +283,7 @@ namespace System.Data
 
         public static double GetDouble(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -294,7 +294,7 @@ namespace System.Data
 
         public static double GetDouble(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -305,7 +305,7 @@ namespace System.Data
 
         public static double GetDouble(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -316,7 +316,7 @@ namespace System.Data
 
         public static double GetDouble(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -327,7 +327,7 @@ namespace System.Data
 
         public static float GetFloat(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -338,7 +338,7 @@ namespace System.Data
 
         public static float GetFloat(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -349,7 +349,7 @@ namespace System.Data
 
         public static float GetFloat(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -360,7 +360,7 @@ namespace System.Data
 
         public static float GetFloat(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -371,7 +371,7 @@ namespace System.Data
 
         public static Guid GetGuid(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -386,7 +386,7 @@ namespace System.Data
 
         public static Guid GetGuid(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -401,7 +401,7 @@ namespace System.Data
 
         public static Guid GetGuid(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -416,7 +416,7 @@ namespace System.Data
 
         public static Guid GetGuid(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -431,7 +431,7 @@ namespace System.Data
 
         public static short GetInt16(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -442,7 +442,7 @@ namespace System.Data
 
         public static short GetInt16(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -453,7 +453,7 @@ namespace System.Data
 
         public static short GetInt16(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -464,7 +464,7 @@ namespace System.Data
 
         public static short GetInt16(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -475,7 +475,7 @@ namespace System.Data
 
         public static int GetInt32(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -486,7 +486,7 @@ namespace System.Data
 
         public static int GetInt32(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -497,7 +497,7 @@ namespace System.Data
 
         public static int GetInt32(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -508,7 +508,7 @@ namespace System.Data
 
         public static int GetInt32(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -519,7 +519,7 @@ namespace System.Data
 
         public static long GetInt64(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -530,7 +530,7 @@ namespace System.Data
 
         public static long GetInt64(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -541,7 +541,7 @@ namespace System.Data
 
         public static long GetInt64(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -552,7 +552,7 @@ namespace System.Data
 
         public static long GetInt64(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -563,7 +563,7 @@ namespace System.Data
 
         public static string GetString(this DataRow dataRow, int columnIndex)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -578,7 +578,7 @@ namespace System.Data
 
         public static string GetString(this DataRow dataRow, string columnName)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -593,7 +593,7 @@ namespace System.Data
 
         public static string GetString(this DataRow dataRow, DataColumn column)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);
@@ -608,7 +608,7 @@ namespace System.Data
 
         public static string GetString(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
 #else
             Throw.IfNull(dataRow);

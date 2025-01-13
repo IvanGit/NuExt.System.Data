@@ -61,7 +61,7 @@ namespace System.Data
         /// </exception>
         protected virtual ValueTask TryExecuteInDbContextAsync(TDbContext? context, Action<TDbContext> action, CancellationToken cancellationToken = default)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(action);
 #else
             Throw.IfNull(action);
@@ -105,7 +105,7 @@ namespace System.Data
         /// </exception>
         protected virtual async ValueTask TryExecuteInDbContextAsync(TDbContext? context, Func<TDbContext, ValueTask> action, CancellationToken cancellationToken = default)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(action);
 #else
             Throw.IfNull(action);
@@ -149,7 +149,7 @@ namespace System.Data
         /// </exception>
         protected virtual ValueTask<T> TryExecuteInDbContextAsync<T>(TDbContext? context, Func<TDbContext, T> func, CancellationToken cancellationToken = default)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(func);
 #else
             Throw.IfNull(func);
@@ -194,7 +194,7 @@ namespace System.Data
         /// </exception>
         protected virtual async ValueTask<T> TryExecuteInDbContextAsync<T>(TDbContext? context, Func<TDbContext, ValueTask<T>> func, CancellationToken cancellationToken = default)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(func);
 #else
             Throw.IfNull(func);

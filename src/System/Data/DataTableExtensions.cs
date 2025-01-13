@@ -14,7 +14,7 @@
 
         public static DataRow? FindRow(this DataTable dataTable, string columnName, Predicate<object?> match)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataTable);
 #else
             Throw.IfNull(dataTable);
@@ -24,7 +24,7 @@
 #else
             Throw.IfNullOrEmpty(columnName);
 #endif
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(match);
 #else
             Throw.IfNull(match);
@@ -45,7 +45,7 @@
 
         public static int GetChangeCount(this DataTable dataTable)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataTable);
 #else
             Throw.IfNull(dataTable);
@@ -61,7 +61,7 @@
 
         public static bool HasChanges(this DataTable dataTable)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(dataTable);
 #else
             Throw.IfNull(dataTable);

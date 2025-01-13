@@ -6,7 +6,7 @@ namespace System.Data
     {
         public static bool? GetNullableBoolean(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -20,7 +20,7 @@ namespace System.Data
 
         public static bool? GetNullableBoolean(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -35,7 +35,7 @@ namespace System.Data
 
         public static byte? GetNullableByte(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -49,7 +49,7 @@ namespace System.Data
 
         public static byte? GetNullableByte(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -64,7 +64,7 @@ namespace System.Data
 
         public static char? GetNullableChar(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -78,7 +78,7 @@ namespace System.Data
 
         public static char? GetNullableChar(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -93,7 +93,7 @@ namespace System.Data
 
         public static DateTime? GetNullableDateTime(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -107,7 +107,7 @@ namespace System.Data
 
         public static DateTime? GetNullableDateTime(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -122,7 +122,7 @@ namespace System.Data
 
         public static decimal? GetNullableDecimal(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -136,7 +136,7 @@ namespace System.Data
 
         public static decimal? GetNullableDecimal(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -151,7 +151,7 @@ namespace System.Data
 
         public static double? GetNullableDouble(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -165,7 +165,7 @@ namespace System.Data
 
         public static double? GetNullableDouble(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -180,7 +180,7 @@ namespace System.Data
 
         public static float? GetNullableFloat(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -194,7 +194,7 @@ namespace System.Data
 
         public static float? GetNullableFloat(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -209,7 +209,7 @@ namespace System.Data
 
         public static Guid? GetNullableGuid(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -223,7 +223,7 @@ namespace System.Data
 
         public static Guid? GetNullableGuid(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -238,7 +238,7 @@ namespace System.Data
 
         public static short? GetNullableInt16(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -252,7 +252,7 @@ namespace System.Data
 
         public static short? GetNullableInt16(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -267,7 +267,7 @@ namespace System.Data
 
         public static int? GetNullableInt32(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -281,7 +281,7 @@ namespace System.Data
 
         public static int? GetNullableInt32(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -296,7 +296,7 @@ namespace System.Data
 
         public static long? GetNullableInt64(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -310,7 +310,7 @@ namespace System.Data
 
         public static long? GetNullableInt64(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -325,7 +325,7 @@ namespace System.Data
 
         public static string? GetNullableString(this DbDataReader reader, int ordinal)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);
@@ -339,7 +339,7 @@ namespace System.Data
 
         public static string? GetNullableString(this DbDataReader reader, string name)
         {
-#if NET6_0_OR_GREATER
+#if NET
             ArgumentNullException.ThrowIfNull(reader);
 #else
             Throw.IfNull(reader);

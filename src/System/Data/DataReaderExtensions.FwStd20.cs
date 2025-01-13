@@ -1,4 +1,4 @@
-﻿#if NETFRAMEWORK || NETSTANDARD2_0
+﻿#if NET_OLD
 using System.ComponentModel;
 using System.Data.Common;
 
