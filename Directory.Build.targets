@@ -1,0 +1,15 @@
+<Project>
+
+  <ItemGroup>
+    <Compile Update="**\*Extensions.cs">
+      <DependentUpon>$([System.String]::Copy('%(Filename)').Replace('Extensions', '.cs'))</DependentUpon>
+    </Compile>
+    <Compile Update="**\*.FwStd20.cs">
+      <DependentUpon>$([System.String]::Copy('%(Filename)').Replace('.FwStd20', '.cs'))</DependentUpon>
+    </Compile>
+    <Compile Update="**\*.Nullable.cs">
+      <DependentUpon>$([System.String]::Copy('%(Filename)').Replace('.Nullable', '.cs'))</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+</Project>
