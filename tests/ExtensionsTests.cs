@@ -49,7 +49,7 @@ namespace NuExt.System.Data.Tests
             {
                 var row = table.Rows[i];
                 var (id, name, description, int32Value, int32NullableValue, boolValue) = listTable[i];
-                Assert.Multiple(() =>
+                using (Assert.EnterMultipleScope())
                 {
                     Assert.That(row["Id"], Is.EqualTo(id));
                     Assert.That(row["Name"], Is.EqualTo(name));
@@ -57,7 +57,7 @@ namespace NuExt.System.Data.Tests
                     Assert.That(row["Int32Value"], Is.EqualTo(int32Value));
                     Assert.That(row["Int32NullableValue"], Is.EqualTo(int32NullableValue ?? (object)DBNull.Value));
                     Assert.That(row["BoolValue"], Is.EqualTo(Convert.ToInt32(boolValue)));
-                });
+                }
             }
 
             Assert.Pass();
