@@ -7,11 +7,8 @@ namespace System.Data
     {
         public static bool GetBoolean(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             if (obj is bool b)
             {
@@ -28,11 +25,8 @@ namespace System.Data
 
         public static bool GetBoolean(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             if (obj is bool b)
             {
@@ -49,11 +43,8 @@ namespace System.Data
 
         public static bool GetBoolean(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             if (obj is bool b)
             {
@@ -70,11 +61,8 @@ namespace System.Data
 
         public static bool GetBoolean(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             if (obj is bool b)
             {
@@ -91,99 +79,72 @@ namespace System.Data
 
         public static byte GetByte(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             return Convert.ToByte(obj);
         }
 
         public static byte GetByte(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             return Convert.ToByte(obj);
         }
 
         public static byte GetByte(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             return Convert.ToByte(obj);
         }
 
         public static byte GetByte(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             return Convert.ToByte(obj);
         }
 
         public static char GetChar(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             return Convert.ToChar(obj);
         }
 
         public static char GetChar(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             return Convert.ToChar(obj);
         }
 
         public static char GetChar(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             return Convert.ToChar(obj);
         }
 
         public static char GetChar(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             return Convert.ToChar(obj);
         }
 
         public static DateTime GetDateTime(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             if (obj is DateTime dt)
             {
@@ -194,11 +155,8 @@ namespace System.Data
 
         public static DateTime GetDateTime(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             if (obj is DateTime dt)
             {
@@ -209,11 +167,8 @@ namespace System.Data
 
         public static DateTime GetDateTime(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             if (obj is DateTime dt)
             {
@@ -224,11 +179,8 @@ namespace System.Data
 
         public static DateTime GetDateTime(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             if (obj is DateTime dt)
             {
@@ -239,143 +191,104 @@ namespace System.Data
 
         public static decimal GetDecimal(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             return Convert.ToDecimal(obj);
         }
 
         public static decimal GetDecimal(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             return Convert.ToDecimal(obj);
         }
 
         public static decimal GetDecimal(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             return Convert.ToDecimal(obj);
         }
 
         public static decimal GetDecimal(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             return Convert.ToDecimal(obj);
         }
 
         public static double GetDouble(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             return Convert.ToDouble(obj);
         }
 
         public static double GetDouble(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             return Convert.ToDouble(obj);
         }
 
         public static double GetDouble(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             return Convert.ToDouble(obj);
         }
 
         public static double GetDouble(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             return Convert.ToDouble(obj);
         }
 
         public static float GetFloat(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             return (float)Convert.ToDouble(obj);
         }
 
         public static float GetFloat(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             return (float)Convert.ToDouble(obj);
         }
 
         public static float GetFloat(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             return (float)Convert.ToDouble(obj);
         }
 
         public static float GetFloat(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             return (float)Convert.ToDouble(obj);
         }
 
         public static Guid GetGuid(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             if (obj is Guid g)
             {
@@ -386,11 +299,8 @@ namespace System.Data
 
         public static Guid GetGuid(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             if (obj is Guid g)
             {
@@ -401,11 +311,8 @@ namespace System.Data
 
         public static Guid GetGuid(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             if (obj is Guid g)
             {
@@ -416,11 +323,8 @@ namespace System.Data
 
         public static Guid GetGuid(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             if (obj is Guid g)
             {
@@ -431,143 +335,104 @@ namespace System.Data
 
         public static short GetInt16(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             return Convert.ToInt16(obj);
         }
 
         public static short GetInt16(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             return Convert.ToInt16(obj);
         }
 
         public static short GetInt16(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             return Convert.ToInt16(obj);
         }
 
         public static short GetInt16(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             return Convert.ToInt16(obj);
         }
 
         public static int GetInt32(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             return Convert.ToInt32(obj);
         }
 
         public static int GetInt32(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             return Convert.ToInt32(obj);
         }
 
         public static int GetInt32(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             return Convert.ToInt32(obj);
         }
 
         public static int GetInt32(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             return Convert.ToInt32(obj);
         }
 
         public static long GetInt64(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             return Convert.ToInt64(obj);
         }
 
         public static long GetInt64(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             return Convert.ToInt64(obj);
         }
 
         public static long GetInt64(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             return Convert.ToInt64(obj);
         }
 
         public static long GetInt64(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             return Convert.ToInt64(obj);
         }
 
         public static string GetString(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnIndex];
             if (obj is string s)
             {
@@ -578,11 +443,8 @@ namespace System.Data
 
         public static string GetString(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[columnName];
             if (obj is string s)
             {
@@ -593,11 +455,8 @@ namespace System.Data
 
         public static string GetString(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column];
             if (obj is string s)
             {
@@ -608,11 +467,8 @@ namespace System.Data
 
         public static string GetString(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             object obj = dataRow[column, version];
             if (obj is string s)
             {

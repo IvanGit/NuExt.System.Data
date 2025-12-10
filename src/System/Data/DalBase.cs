@@ -61,11 +61,8 @@ namespace System.Data
         /// </exception>
         protected virtual ValueTask TryExecuteInDbContextAsync(TDbContext? context, Action<TDbContext> action, CancellationToken cancellationToken = default)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(action);
-#else
-            Throw.IfNull(action);
-#endif
+
             bool contextTaken = TryCreateDbContext(ref context);
             try
             {
@@ -105,11 +102,8 @@ namespace System.Data
         /// </exception>
         protected virtual async ValueTask TryExecuteInDbContextAsync(TDbContext? context, Func<TDbContext, ValueTask> action, CancellationToken cancellationToken = default)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(action);
-#else
-            Throw.IfNull(action);
-#endif
+
             bool contextTaken = TryCreateDbContext(ref context);
             try
             {
@@ -149,11 +143,8 @@ namespace System.Data
         /// </exception>
         protected virtual ValueTask<T> TryExecuteInDbContextAsync<T>(TDbContext? context, Func<TDbContext, T> func, CancellationToken cancellationToken = default)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(func);
-#else
-            Throw.IfNull(func);
-#endif
+
             bool contextTaken = TryCreateDbContext(ref context);
             try
             {
@@ -194,11 +185,8 @@ namespace System.Data
         /// </exception>
         protected virtual async ValueTask<T> TryExecuteInDbContextAsync<T>(TDbContext? context, Func<TDbContext, ValueTask<T>> func, CancellationToken cancellationToken = default)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(func);
-#else
-            Throw.IfNull(func);
-#endif
+
             bool contextTaken = TryCreateDbContext(ref context);
             try
             {

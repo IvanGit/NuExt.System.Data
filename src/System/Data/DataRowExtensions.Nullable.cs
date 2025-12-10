@@ -6,11 +6,8 @@ namespace System.Data
     {
         public static bool? GetNullableBoolean(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -31,11 +28,8 @@ namespace System.Data
 
         public static bool? GetNullableBoolean(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -56,11 +50,8 @@ namespace System.Data
 
         public static bool? GetNullableBoolean(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -81,11 +72,8 @@ namespace System.Data
 
         public static bool? GetNullableBoolean(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -106,11 +94,8 @@ namespace System.Data
 
         public static byte? GetNullableByte(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -121,11 +106,8 @@ namespace System.Data
 
         public static byte? GetNullableByte(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -136,11 +118,8 @@ namespace System.Data
 
         public static byte? GetNullableByte(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -151,11 +130,8 @@ namespace System.Data
 
         public static byte? GetNullableByte(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -166,11 +142,8 @@ namespace System.Data
 
         public static char? GetNullableChar(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -181,11 +154,8 @@ namespace System.Data
 
         public static char? GetNullableChar(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -196,11 +166,8 @@ namespace System.Data
 
         public static char? GetNullableChar(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -211,11 +178,8 @@ namespace System.Data
 
         public static char? GetNullableChar(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -226,11 +190,8 @@ namespace System.Data
 
         public static DateTime? GetNullableDateTime(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -245,11 +206,8 @@ namespace System.Data
 
         public static DateTime? GetNullableDateTime(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -264,11 +222,8 @@ namespace System.Data
 
         public static DateTime? GetNullableDateTime(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -283,11 +238,8 @@ namespace System.Data
 
         public static DateTime? GetNullableDateTime(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -302,11 +254,8 @@ namespace System.Data
 
         public static decimal? GetNullableDecimal(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -317,11 +266,8 @@ namespace System.Data
 
         public static decimal? GetNullableDecimal(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -332,11 +278,8 @@ namespace System.Data
 
         public static decimal? GetNullableDecimal(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -347,11 +290,8 @@ namespace System.Data
 
         public static decimal? GetNullableDecimal(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -362,11 +302,8 @@ namespace System.Data
 
         public static double? GetNullableDouble(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -377,11 +314,8 @@ namespace System.Data
 
         public static double? GetNullableDouble(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -392,11 +326,8 @@ namespace System.Data
 
         public static double? GetNullableDouble(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -407,11 +338,8 @@ namespace System.Data
 
         public static double? GetNullableDouble(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -422,11 +350,8 @@ namespace System.Data
 
         public static float? GetNullableFloat(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -437,11 +362,8 @@ namespace System.Data
 
         public static float? GetNullableFloat(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -452,11 +374,8 @@ namespace System.Data
 
         public static float? GetNullableFloat(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -467,11 +386,8 @@ namespace System.Data
 
         public static float? GetNullableFloat(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -482,11 +398,8 @@ namespace System.Data
 
         public static Guid? GetNullableGuid(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -501,11 +414,8 @@ namespace System.Data
 
         public static Guid? GetNullableGuid(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -520,11 +430,8 @@ namespace System.Data
 
         public static Guid? GetNullableGuid(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -539,11 +446,8 @@ namespace System.Data
 
         public static Guid? GetNullableGuid(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -558,11 +462,8 @@ namespace System.Data
 
         public static short? GetNullableInt16(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -573,11 +474,8 @@ namespace System.Data
 
         public static short? GetNullableInt16(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -588,11 +486,8 @@ namespace System.Data
 
         public static short? GetNullableInt16(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -603,11 +498,8 @@ namespace System.Data
 
         public static short? GetNullableInt16(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -618,11 +510,8 @@ namespace System.Data
 
         public static int? GetNullableInt32(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -633,11 +522,8 @@ namespace System.Data
 
         public static int? GetNullableInt32(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -648,11 +534,8 @@ namespace System.Data
 
         public static int? GetNullableInt32(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -663,11 +546,8 @@ namespace System.Data
 
         public static int? GetNullableInt32(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -678,11 +558,8 @@ namespace System.Data
 
         public static long? GetNullableInt64(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -693,11 +570,8 @@ namespace System.Data
 
         public static long? GetNullableInt64(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -708,11 +582,8 @@ namespace System.Data
 
         public static long? GetNullableInt64(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -723,11 +594,8 @@ namespace System.Data
 
         public static long? GetNullableInt64(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;
@@ -738,11 +606,8 @@ namespace System.Data
 
         public static string? GetNullableString(this DataRow dataRow, int columnIndex)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnIndex))
             {
                 return null;
@@ -757,11 +622,8 @@ namespace System.Data
 
         public static string? GetNullableString(this DataRow dataRow, string columnName)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(columnName))
             {
                 return null;
@@ -776,11 +638,8 @@ namespace System.Data
 
         public static string? GetNullableString(this DataRow dataRow, DataColumn column)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column))
             {
                 return null;
@@ -795,11 +654,8 @@ namespace System.Data
 
         public static string? GetNullableString(this DataRow dataRow, DataColumn column, DataRowVersion version)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataRow);
-#else
-            Throw.IfNull(dataRow);
-#endif
+
             if (dataRow.IsNull(column, version))
             {
                 return null;

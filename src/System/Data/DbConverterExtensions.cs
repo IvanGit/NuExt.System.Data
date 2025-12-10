@@ -6,15 +6,10 @@ namespace System.Data
     {
         private static void CheckDbVersion<TDbConnection>(TDbConnection connection, Func<TDbConnection, CancellationToken, Version> getDbVersion, Version dbVersion, CancellationToken cancellationToken) where TDbConnection : IDbConnection
         {
-#if NET
             ArgumentNullException.ThrowIfNull(connection);
             ArgumentNullException.ThrowIfNull(getDbVersion);
             ArgumentNullException.ThrowIfNull(dbVersion);
-#else
-            Throw.IfNull(connection);
-            Throw.IfNull(getDbVersion);
-            Throw.IfNull(dbVersion);
-#endif
+
             var version = getDbVersion(connection, cancellationToken);
             if (version > dbVersion)
             {
@@ -24,25 +19,16 @@ namespace System.Data
 
         public static void Initialize<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, IDbContext context, CancellationToken cancellationToken) where TDbConnection : IDbConnection
         {
-#if NET
             ArgumentNullException.ThrowIfNull(converters);
             ArgumentNullException.ThrowIfNull(context);
-#else
-            Throw.IfNull(converters);
-            Throw.IfNull(context);
-#endif
+
             converters.Initialize((TDbConnection)context.Connection, cancellationToken);
         }
 
         public static void Initialize<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection, CancellationToken cancellationToken) where TDbConnection : IDbConnection
         {
-#if NET
             ArgumentNullException.ThrowIfNull(converters);
             ArgumentNullException.ThrowIfNull(connection);
-#else
-            Throw.IfNull(converters);
-            Throw.IfNull(connection);
-#endif
             Debug.Assert(converters.Count > 0);
             Debug.Assert(converters.IsOrderedByAscending());
             Debug.Assert(connection is { State: ConnectionState.Open }, $"{nameof(connection)} is not opened.");
@@ -90,13 +76,9 @@ namespace System.Data
 
         private static bool RequiresUpdate<TDbConnection>(this IReadOnlyList<DbConverter<TDbConnection>> converters, TDbConnection connection, CancellationToken cancellationToken) where TDbConnection : IDbConnection
         {
-#if NET
             ArgumentNullException.ThrowIfNull(converters);
             ArgumentNullException.ThrowIfNull(connection);
-#else
-            Throw.IfNull(converters);
-            Throw.IfNull(connection);
-#endif
+
             Debug.Assert(connection is { State: ConnectionState.Open }, $"{nameof(connection)} is not opened.");
             if (
 #if NET_OLD

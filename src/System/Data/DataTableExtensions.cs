@@ -14,21 +14,10 @@
 
         public static DataRow? FindRow(this DataTable dataTable, string columnName, Predicate<object?> match)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataTable);
-#else
-            Throw.IfNull(dataTable);
-#endif
-#if NET8_0_OR_GREATER
             ArgumentException.ThrowIfNullOrEmpty(columnName);
-#else
-            Throw.IfNullOrEmpty(columnName);
-#endif
-#if NET
             ArgumentNullException.ThrowIfNull(match);
-#else
-            Throw.IfNull(match);
-#endif
+
             if (dataTable.Rows.Count == 0)
             {
                 return null;
@@ -45,11 +34,8 @@
 
         public static int GetChangeCount(this DataTable dataTable)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataTable);
-#else
-            Throw.IfNull(dataTable);
-#endif
+
             int changes = 0;
             foreach (DataRow row in dataTable.Rows)
             {
@@ -61,11 +47,8 @@
 
         public static bool HasChanges(this DataTable dataTable)
         {
-#if NET
             ArgumentNullException.ThrowIfNull(dataTable);
-#else
-            Throw.IfNull(dataTable);
-#endif
+
             foreach (DataRow row in dataTable.Rows)
             {
                 if ((row.RowState & (DataRowState.Modified | DataRowState.Deleted | DataRowState.Added)) != 0)
