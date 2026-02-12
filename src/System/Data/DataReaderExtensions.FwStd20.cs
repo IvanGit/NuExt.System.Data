@@ -1,4 +1,4 @@
-﻿#if NET_OLD
+﻿#if !(NET5_0_OR_GREATER || NETSTANDARD2_1_OR_GREATER)
 using System.ComponentModel;
 using System.Data.Common;
 

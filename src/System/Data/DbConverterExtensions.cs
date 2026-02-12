@@ -38,7 +38,7 @@ namespace System.Data
             try
             {
 
-#if NET_OLD
+#if NETFRAMEWORK || NETSTANDARD2_0
                 var dbVersion = converters[converters.Count - 1].Version;
 #else
                 var dbVersion = converters[^1].Version;
@@ -48,7 +48,7 @@ namespace System.Data
                     bool result = converters.Update(connection, dbVersion, cancellationToken);
                     Debug.Assert(result);
                 }
-#if NET_OLD
+#if NETFRAMEWORK || NETSTANDARD2_0
                 CheckDbVersion(connection, converters[converters.Count - 1].GetDbVersion, dbVersion, cancellationToken);
 #else
                 CheckDbVersion(connection, converters[^1].GetDbVersion, dbVersion, cancellationToken);
@@ -81,7 +81,7 @@ namespace System.Data
 
             Debug.Assert(connection is { State: ConnectionState.Open }, $"{nameof(connection)} is not opened.");
             if (
-#if NET_OLD
+#if NETFRAMEWORK || NETSTANDARD2_0
                 converters[converters.Count - 1]
 #else
                 converters[^1]

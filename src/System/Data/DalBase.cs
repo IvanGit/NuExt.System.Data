@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 
 namespace System.Data
 {
@@ -41,7 +42,7 @@ namespace System.Data
         /// Attempts to create and assign a new instance of the database context if it is not already initialized.
         /// </summary>
         /// <param name="context">Reference to the database context.</param>
-        /// <returns><c>true</c> if a new context was created; otherwise, <c>false</c>.</returns>
+        /// <returns><see langword="true"/> if a new context was created; otherwise, <see langword="false"/>.</returns>
         protected bool TryCreateDbContext([NotNull] ref TDbContext? context)
         {
             if (context != null) return false;

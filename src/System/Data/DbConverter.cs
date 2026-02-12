@@ -32,7 +32,7 @@
         /// </summary>
         /// <param name="connection">The database connection to check.</param>
         /// <param name="cancellationToken">Cancellation token to cancel the execution.</param>
-        /// <returns><c>true</c> if the database requires an update; otherwise, <c>false</c>.</returns>
+        /// <returns><see langword="true"/> if the database requires an update; otherwise, <see langword="false"/>.</returns>
         public virtual bool RequiresUpdate(TDbConnection connection, CancellationToken cancellationToken)
         {
             Version dbVersion = GetDbVersion(connection, cancellationToken);
@@ -44,7 +44,7 @@
         /// </summary>
         /// <param name="connection">The database connection to update.</param>
         /// <param name="cancellationToken">Cancellation token to cancel the execution.</param>
-        /// <returns><c>true</c> if the update was successful; otherwise, <c>false</c>.</returns>
+        /// <returns><see langword="true"/> if the update was successful; otherwise, <see langword="false"/>.</returns>
         public abstract bool Update(TDbConnection connection, CancellationToken cancellationToken);
 
         #endregion
