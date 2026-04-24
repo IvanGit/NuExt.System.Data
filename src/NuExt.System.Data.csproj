@@ -4,29 +4,19 @@
     <TargetFrameworks>netstandard2.1;netstandard2.0;net10.0;net9.0;net8.0;net471;net462</TargetFrameworks>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
-    <PackageTags>nuext;extensions;database;ado.net;async</PackageTags>
-    <Description>1High‑level data access utilities for .NET, providing extensions for DataReader, DataRow, and DataTable, plus lightweight DAL helpers, DbConverter, and IDbContext abstractions. Designed to simplify common database operations and improve consistency across data access layers.</Description>
-    <Version>0.7.3</Version>
+    <Description>High‑level data access utilities for .NET, providing extensions for DataReader, DataRow, and DataTable, plus lightweight DAL helpers, DbConverter, and IDbContext abstractions. Designed to simplify common database operations and improve consistency across data access layers.</Description>
     <RootNamespace />
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591;NETSDK1233</NoWarn>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageIcon>logo.png</PackageIcon>
-    <PackageProjectUrl>https://github.com/nu-ext/NuExt.System.Data</PackageProjectUrl>
+    <VersionPrefix>0.7.4</VersionPrefix>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(UseNuExtPackages)' == 'true'">
+  <ItemGroup Condition="'$(NuExt_UseLocalProjects)' != 'true'">
     <PackageReference Include="NuExt.System" Version="0.7.3" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(UseNuExtPackages)' == 'false'">
+  <ItemGroup Condition="'$(NuExt_UseLocalProjects)' == 'true'">
     <ProjectReference Include="..\..\NuExt.System\src\NuExt.System.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\logo.png" Pack="true" PackagePath="\" />
-    <None Include="..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
