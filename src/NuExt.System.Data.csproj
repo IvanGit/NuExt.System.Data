@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(NuExt_UseLocalProjects)' != 'true'">
-    <PackageReference Include="NuExt.System" Version="0.7.3" />
+    <PackageReference Include="NuExt.System" Version="0.7.4" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(NuExt_UseLocalProjects)' == 'true'">
